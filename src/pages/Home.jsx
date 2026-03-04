@@ -7,9 +7,9 @@ import React from "react";
 
 function Home(){
     return(
-        <Container sx={{mt:8}}>
+        <Container sx={{mt:15}}>
             <Grid  container spacing={4} alignItems="center">
-                <Grid size={{xs:12, sm:6}}>
+                <Grid size={{sm:12, md:6}}>
                     <Typography variant="h3" fontWeight="bold">Hi, I'm Apoorva</Typography>
                     <Typography variant="h5" sx={{ mt: 1 }}>Software Developer</Typography>
                     <Typography sx={{mt:1}}>Aspiring Software Development Engineer with an Electronics and Communication Engineering background,
@@ -19,16 +19,17 @@ function Home(){
                     skills.</Typography>
                 </Grid>
 
-                <Grid size={{xs:12, sm:6}}>
+                <Grid size={{sm:12, md:6}}>
                     <Box
                         component="img"
                         sx={{
-                        width: 250,
-                        height: 250,
+                        width: 350,
+                        height: 350,
                         borderRadius: "50%",
                         objectFit: "cover",
                         display: "block",
                         margin: "auto",
+                        pl:3
                         }}
                         alt="Apoorva"
                         src={profilePic}
