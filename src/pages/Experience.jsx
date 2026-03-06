@@ -9,8 +9,9 @@ import TimelineDot from '@mui/lab/TimelineDot';
 
 function Experience(){
     return(
-        <Container sx={{mt:12}}>
+        <Container sx={{mt:15}}>
             <Typography variant="h4" fontWeight="bold" textAlign="center">Experience</Typography>
+                <Typography variant="h6" sx={{mt:2}} textAlign="center">My professional and learning journey so far.</Typography>            
             <Timeline sx={{[`& .${timelineItemClasses.root}:before`]: {
           flex: 0,
           padding: 0,

@@ -5,6 +5,9 @@ import Box from "@mui/material/Box";
 import profilePic from '../assets/profile/profile.jpeg'
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import GitHubIcon from "@mui/icons-material/GitHub"
+import LinkedInIcon from "@mui/icons-material/LinkedIn"
+import DownloadIcon from "@mui/icons-material/Download"
 import React from "react";
 
 function Home(){
@@ -19,9 +22,9 @@ function Home(){
                     experience building real world React applications involving state management, CRUD operations, authentication, and
                     role based workflows. Passionate about writing clean, maintainable code and continuously improving problem solving
                     skills.</Typography>
-                    <Button variant="outlined" sx={{mt:2,mr:2,borderRadius:"16px"}}>Resume</Button>
-                    <Button variant="outlined" sx={{mt:2, mr:2,borderRadius:"16px"}}>Github</Button>
-                    <Button variant="outlined" sx={{mt:2,mr:2,borderRadius:"16px"}}>LinkedIn</Button>
+                    <Button variant="outlined" sx={{mt:2,mr:2,borderRadius:"16px"}}><DownloadIcon sx={{mr:0.5}}/>Resume</Button>
+                    <Button variant="outlined" sx={{mt:2, mr:2,borderRadius:"16px"}}><GitHubIcon /></Button>
+                    <Button variant="outlined" sx={{mt:2,mr:2,borderRadius:"16px"}}><LinkedInIcon /></Button>
                 </Grid>
 
                 <Grid size={{sm:12, md:6}}>
