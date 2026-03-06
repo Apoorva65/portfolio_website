@@ -7,9 +7,11 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@emotion/react";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
+import { useNavigate } from "react-router";
 
 function Navigation(){
 
+    const navigate = useNavigate();
     const theme = useTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -23,11 +25,26 @@ function Navigation(){
                 </IconButton>
             ):(
                 <>
-                    <Button color="inherit" variant="contained" sx={{mx:2}}>Home</Button>
-                    <Button color="inherit" variant="contained" sx={{mx:2}}>Experience</Button>
-                    <Button color="inherit" variant="contained" sx={{mx:2}}>Projects</Button>
-                    <Button color="inherit" variant="contained" sx={{mx:2}}>Skills</Button>
-                    <Button color="inherit" variant="contained" sx={{mx:2}}>Contact</Button>
+                    <Button color="inherit" variant="contained" sx={{mx:2}}
+                    onClick={()=>navigate("/")}>
+                        Home
+                    </Button>
+                    <Button color="inherit" variant="contained" sx={{mx:2}}
+                    onClick={()=>navigate("/experience")}>
+                        Experience
+                    </Button>
+                    <Button color="inherit" variant="contained" sx={{mx:2}}
+                    onClick={()=>navigate("/projects")}>
+                        Projects
+                    </Button>
+                    <Button color="inherit" variant="contained" sx={{mx:2}}
+                    onClick={()=>navigate("/skills")}>
+                        Skills
+                    </Button>
+                    <Button color="inherit" variant="contained" sx={{mx:2}}
+                    onClick={()=>navigate("/contact")}>
+                        Contact
+                    </Button>
                 </>
             )}
             </Toolbar>
