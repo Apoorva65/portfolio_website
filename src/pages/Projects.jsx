@@ -1,127 +1,126 @@
 import React from "react";
-import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Container from "@mui/material/Container";
-import Stack from "@mui/material/Stack";
-import GitHubIcon from "@mui/icons-material/GitHub"
-import { FaFire,FaCss3Alt } from "react-icons/fa";
-import { FaReact } from "react-icons/fa";
-import { SiRedux } from "react-icons/si";
-import { SiTailwindcss } from "react-icons/si";
-import { IoLogoVercel,IoLogoJavascript } from "react-icons/io5";
-import LaunchIcon from '@mui/icons-material/Launch';
+import { Container, Typography, Stack, Box, Button, Divider } from "@mui/material";
 
-function Projects(){
-    return(
-        <Container sx={{mt:15}}>
-            <Typography variant="h4" fontWeight="bold" textAlign="center">Projects</Typography>
-            <Typography variant="h6" sx={{mt:2}} textAlign="center">Projects that demonstrate my problem-solving skills and experience with modern web technologies.</Typography>
-            <Stack direction="row" spacing={2} sx={{mt:5}} gap={2}>
-                <Card sx={{ maxWidth: 345,cursor: "pointer","&:hover": {transform: "scale(1.05)",boxShadow: 6}}}>
-                    <CardMedia
-                        sx={{ height: 140 }}
-                        image="/syncro.png"
-                        title="Syncro"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                        Syncro
-                        </Typography>
-                        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                        Syncro is a project and task management web app built with React, Redux and Firebase. It allows users to create projects, manage tasks within each project, and track task completion with a clean and minimal UI.
-                        </Typography>
-                        <Stack direction="row" spacing={2} sx={{mt:1}}><IoLogoJavascript size={20}/> <FaReact size={20}/> <SiRedux size={20}/> <FaFire size={20}/> <SiTailwindcss size={20}/> <IoLogoVercel size={20}/> </Stack>
-                    </CardContent>
-                    <CardActions>
-                        <Button 
-                        size="small"
-                        component="a"
-                        href="https://github.com/Apoorva65/react_syncro"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                            <GitHubIcon/>
-                        </Button>
-                        <Button 
-                        size="small"
-                        component="a"
-                        href="https://react-syncro.vercel.app/login"
-                        target="_blank"
-                        rel="noopener noreferrer"><LaunchIcon/></Button>
-                    </CardActions>
-                    </Card>
+import GitHubIcon from "@mui/icons-material/GitHub";
+import LaunchIcon from "@mui/icons-material/Launch";
 
-                <Card sx={{ maxWidth: 345,cursor: "pointer","&:hover": {transform: "scale(1.05)",boxShadow: 6}}}>
-                    <CardMedia
-                        sx={{ height: 140 }}
-                        image="/notenest.png"
-                        title="Note Nest"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                        NoteNest
-                        </Typography>
-                        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                        NoteNest is an offline-first notes application built with React that supports creating, editing, searching, and deleting notes with automatic saving, using React Router for navigation and LocalStorage for persistent storage.
-                        </Typography>
-                        <Stack direction="row" spacing={2} sx={{mt:1}}><IoLogoJavascript size={20}/> <FaReact size={20}/> <SiTailwindcss size={20}/> <IoLogoVercel size={20}/> </Stack>
-                    </CardContent>
-                    <CardActions>
-                        <Button 
-                        size="small"
-                        component="a"
-                        href="https://github.com/Apoorva65/NoteNest"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                            <GitHubIcon/>
-                        </Button>
-                        <Button 
-                        size="small"
-                        component="a"
-                        href="https://note-nest-alpha.vercel.app/"
-                        target="_blank"
-                        rel="noopener noreferrer"><LaunchIcon/></Button>
-                    </CardActions>
-                </Card>
+import { FaReact, FaFire, FaCss3Alt } from "react-icons/fa";
+import { SiRedux, SiTailwindcss } from "react-icons/si";
+import { IoLogoVercel, IoLogoJavascript } from "react-icons/io5";
 
-                <Card sx={{ maxWidth: 345,cursor: "pointer","&:hover": {transform: "scale(1.05)",boxShadow: 6}}}>
-                    <CardMedia
-                        sx={{ height: 140 }}
-                        image="/cost.png"
-                        title="CostIQ"
-                    />
-                    <CardContent>
-                        <Typography gutterBottom variant="h5" component="div">
-                        CostIQ
-                        </Typography>
-                        <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-                        CostIQ is a simple expense management web application built with React. It allows users to track daily expenses, categorize them, view summaries, and manage data with full CRUD functionality.
-                        </Typography>
-                        <Stack direction="row" spacing={2} sx={{mt:1}}><IoLogoJavascript size={20}/> <FaReact size={20}/> <FaCss3Alt size={20}/> <IoLogoVercel size={20}/> </Stack>
-                    </CardContent>
-                    <CardActions>
-                        <Button 
-                        size="small"
-                        component="a"
-                        href="https://github.com/Apoorva65/CostIQ"
-                        target="_blank"
-                        rel="noopener noreferrer">
-                            <GitHubIcon/>
-                        </Button>
-                        <Button 
-                        size="small"
-                        component="a"
-                        href="https://cost-iq.vercel.app/"
-                        target="_blank"
-                        rel="noopener noreferrer"><LaunchIcon/></Button>
-                    </CardActions>
-                </Card>
-                </Stack>
-        </Container>
-    )
+function Projects() {
+
+  const Project = ({title, description, children, github, live}) => (
+    <Box
+        sx={{
+            py:6,
+            pl:3,
+            borderLeft:"2px solid",
+            borderColor:"divider",
+            transition:"0.25s",
+            "&:hover":{
+            borderColor:"primary.main",
+            transform:"translateX(6px)"
+            }
+        }}
+        >
+
+      <Typography variant="h4" fontWeight="bold">
+        {title}
+      </Typography>
+
+      <Typography sx={{mt:2, maxWidth:700}} color="text.secondary">
+        {description}
+      </Typography>
+
+      <Stack direction="row" spacing={2} sx={{mt:3}}>
+        {children}
+      </Stack>
+
+      <Stack direction="row" spacing={2} sx={{mt:3}}>
+        <Button
+          startIcon={<GitHubIcon/>}
+          component="a"
+          href={github}
+          target="_blank"
+        >
+          Code
+        </Button>
+
+        <Button
+          startIcon={<LaunchIcon/>}
+          component="a"
+          href={live}
+          target="_blank"
+        >
+          Live Demo
+        </Button>
+      </Stack>
+
+      <Divider sx={{mt:6}}/>
+
+    </Box>
+  )
+
+
+  return (
+    <Container maxWidth="md" sx={{mt:15}}>
+
+      <Typography variant="h4" fontWeight="bold" textAlign="center">
+        Projects
+      </Typography>
+
+      <Typography
+        variant="h6"
+        textAlign="center"
+        sx={{mt:2, maxWidth:600, mx:"auto", fontWeight:"bold"}}
+        color="text.secondary"
+      >
+        Projects that demonstrate my problem-solving skills and experience with modern web technologies.
+      </Typography>
+
+
+      <Project
+        title="Syncro"
+        description="Syncro is a project and task management web app built with React, Redux and Firebase. It allows users to create projects, manage tasks within each project, and track task completion with a clean and minimal UI."
+        github="https://github.com/Apoorva65/react_syncro"
+        live="https://react-syncro.vercel.app/login"
+      >
+        <IoLogoJavascript size={22}/>
+        <FaReact size={22}/>
+        <SiRedux size={22}/>
+        <FaFire size={22}/>
+        <SiTailwindcss size={22}/>
+        <IoLogoVercel size={22}/>
+      </Project>
+
+      <Project
+        title="NoteNest"
+        description="NoteNest is an offline-first notes application built with React that supports creating, editing, searching, and deleting notes with automatic saving, using React Router for navigation and LocalStorage for persistent storage."
+        github="https://github.com/Apoorva65/NoteNest"
+        live="https://note-nest-alpha.vercel.app/"
+      >
+        <IoLogoJavascript size={22}/>
+        <FaReact size={22}/>
+        <SiTailwindcss size={22}/>
+        <IoLogoVercel size={22}/>
+      </Project>
+
+
+      <Project
+        title="CostIQ"
+        description="CostIQ is a simple expense management web application built with React. It allows users to track daily expenses, categorize them, view summaries, and manage data with full CRUD functionality."
+        github="https://github.com/Apoorva65/CostIQ"
+        live="https://cost-iq.vercel.app/"
+      >
+        <IoLogoJavascript size={22}/>
+        <FaReact size={22}/>
+        <FaCss3Alt size={22}/>
+        <IoLogoVercel size={22}/>
+      </Project>
+
+    </Container>
+  )
 }
 
 export default Projects;

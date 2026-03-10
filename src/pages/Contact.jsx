@@ -14,8 +14,8 @@ function Contact(){
     return(
         <Container sx={{mt:15}}>
             <Typography variant="h4" fontWeight="bold" textAlign="center">Contact</Typography>
-                <Typography variant="h6" sx={{mt:2}} textAlign="center">Interested in working together or want to discuss opportunities?</Typography>
-                <Typography variant="h6" sx={{mt:1}} textAlign="center">Feel free to reach out.</Typography>
+                <Typography variant="h6" sx={{mt:2, maxWidth:600, mx:"auto", fontWeight:"bold"}} color="text.secondary" textAlign="center">Interested in working together or want to discuss opportunities?</Typography>
+                <Typography variant="h6" sx={{mt:2, maxWidth:600, mx:"auto", fontWeight:"bold"}} color="text.secondary" textAlign="center">Feel free to reach out.</Typography>
                     
                     <Grid container spacing={4} sx={{mt:10}} justifyContent="center">
                         <Grid size={{ xs: 12, md: 6 }}>
